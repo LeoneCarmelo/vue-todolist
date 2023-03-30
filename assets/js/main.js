@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newToDo: '',
             check:'X',
             list:[
                 {
@@ -27,6 +28,14 @@ createApp({
     methods: {
         remove(index) {
             this.list.splice(index, 1)
+        },
+        addToDo() {
+            const newToDoObj = {
+                text: this.newToDo,
+                done: false
+            }
+            this.list.push(newToDoObj)
+            this.newToDo = ''
         }
     }
 
