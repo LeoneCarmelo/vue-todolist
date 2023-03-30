@@ -36,6 +36,9 @@ createApp({
             }
             this.list.push(newToDoObj)
             this.newToDo = ''
+        },
+        lineThrough(task) {
+            task.done = !task.done
         }
     }
 

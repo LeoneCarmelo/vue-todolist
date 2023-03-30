@@ -18,7 +18,7 @@
                 <input type="text" v-model.trim="newToDo">
                 <button class="mx-2 fw-bold btn btn-success" @click="addToDo()">Add</button>
                 <ul class="ps-0">
-                    <li :class="task.done ? 'done' : ''" v-for="(task, index) in list">
+                    <li :class="task.done ? 'done' : ''" v-for="(task, index) in list" @click="lineThrough(task)">
                         {{task.text}}
                         <span class="px-2" @click="remove(index)">{{check}}</span>
                     </li>

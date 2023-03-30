@@ -5,3 +5,7 @@
 ul {
     list-style: none;
 }
+
+li, span {
+    cursor: pointer;
+}
