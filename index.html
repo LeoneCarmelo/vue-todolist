@@ -16,8 +16,9 @@
             <div class="container">
                 <h1>To Do List</h1>
                 <ul>
-                    <li :style="task.done ? 'text-decoration: line-through' : ''" v-for="(task, index) in list">
+                    <li :class="task.done ? 'done' : ''" v-for="(task, index) in list">
                         {{task.text}}
+                        <span class="px-2" @click="remove(index)">{{check}}</span>
                     </li>
                 </ul>
             </div>

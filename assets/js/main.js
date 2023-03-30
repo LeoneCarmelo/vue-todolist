@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            check:'X',
             list:[
                 {
                     text: 'Learn a new language',
@@ -24,7 +25,9 @@ createApp({
         }
     },
     methods: {
-        
+        remove(index) {
+            this.list.splice(index, 1)
+        }
     }
 
 }).mount('#app')
