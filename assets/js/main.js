@@ -30,16 +30,20 @@ createApp({
             this.list.splice(index, 1)
         },
         addToDo() {
-            const newToDoObj = {
-                text: this.newToDo,
-                done: false
+            if (this.newToDo.length < 2) {
+                this.newToDo = 'Insert a valid task'
+            } else {
+                const newToDoObj = {
+                    text: this.newToDo,
+                    done: false
+                }
+                this.list.push(newToDoObj)
+                this.newToDo = ''
             }
-            this.list.push(newToDoObj)
-            this.newToDo = ''
         },
         lineThrough(task) {
             task.done = !task.done
-        }
+        },
     }
 
 }).mount('#app')
